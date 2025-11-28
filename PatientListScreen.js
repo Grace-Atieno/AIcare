@@ -18,10 +18,10 @@ export default function PatientListScreen({ navigation }) {
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.item}>
-                        <Text>{item.name}, Age: {item.age}</Text>
+                        <Text style={styles.itemName}>{item.name}, Age: {item.age}</Text>
                         <Button
-                            title="Add Metric"
-                            onPress={() => navigation.navigate('AddMetric', { patientId: item.id })}
+                            title="Create Form"
+                            onPress={() => navigation.navigate('FormBuilder', { patient: item })}
                         />
                     </View>
                 )}
@@ -32,6 +32,7 @@ export default function PatientListScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     container: { flex: 1, padding: 20 },
-    title: { fontSize: 22, marginBottom: 20, textAlign: 'center' },
-    item: { padding: 10, borderBottomWidth: 1, borderBottomColor: '#ccc' },
+    title: { fontSize: 22, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
+    item: { padding: 12, borderBottomWidth: 1, borderBottomColor: '#ccc', marginBottom: 10, borderRadius: 8, backgroundColor: '#f9f9f9' },
+    itemName: { fontSize: 16, fontWeight: '600', marginBottom: 8 },
 });

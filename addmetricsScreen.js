@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
-export default function AddMetricScreen({ route }) {
+export default function addmetricsScreen({ route }) {
     const { patientId } = route.params || {}; // get patient ID if passed
     const [metric, setMetric] = useState('');
 
